@@ -9,13 +9,13 @@ class RaceManager {
     }
 
     private fun race(car1: Car, car2: Car): Car {
-        Log.d(TAG, "Гонка между ${car1.brand} ${car1.model} и ${car2.brand} ${car2.model}")
+        Log.d(TAG, "Race between ${car1.brand} ${car1.model} and ${car2.brand} ${car2.model}")
 
         return if (car1.horsepower > car2.horsepower) {
-            Log.d(TAG, "Победитель: ${car1.brand} ${car1.model}")
+            Log.d(TAG, "Winner: ${car1.brand} ${car1.model}")
             car1
         } else {
-            Log.d(TAG, "Победитель: ${car2.brand} ${car2.model}")
+            Log.d(TAG, "Winner: ${car2.brand} ${car2.model}")
             car2
         }
     }
@@ -32,7 +32,7 @@ class RaceManager {
                     val winner = race(shuffledCars[i], shuffledCars[i + 1])
                     nextRound.add(winner)
                 } else {
-                    Log.d(TAG, "${shuffledCars[i].brand} ${shuffledCars[i].model} - Нет пары, следующий круг")
+                    Log.d(TAG, "${shuffledCars[i].brand} ${shuffledCars[i].model} - No pares, next race")
                     nextRound.add(shuffledCars[i])
                 }
             }

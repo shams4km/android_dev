@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "Number of cars: $numCars")
                 val cars = generateRandomCars(numCars)
                 val winner = RaceManager().organizeRaces(cars)
-                Log.d(TAG, "Победитель: ${winner.brand} ${winner.model}")
+                Log.d(TAG, "Winner: ${winner.brand} ${winner.model}")
             } else {
-                Log.d(TAG, "Введите корректное число автомобилей")
+                Log.d(TAG, "Write correct number of cars")
             }
         }
     }
