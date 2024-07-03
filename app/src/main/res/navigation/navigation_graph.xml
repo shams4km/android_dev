@@ -45,5 +45,9 @@
     <fragment
         android:id="@+id/detailedFragment"
         android:name="com.example.hw2.DetailedFragment"
-        android:label="DetailedFragment" />
+        android:label="DetailedFragment" >
+        <action
+            android:id="@+id/action_detailedFragment_to_musicFragment"
+            app:destination="@id/musicFragment" />
+    </fragment>
 </navigation>

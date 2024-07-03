@@ -10,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hw2.databinding.FragmentMusicBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MusicFragment : Fragment(R.layout.fragment_music) {
     private var binding: FragmentMusicBinding? = null
@@ -22,10 +23,12 @@ class MusicFragment : Fragment(R.layout.fragment_music) {
     }
 
     private fun initAdapter() {
-        adapter = SongAdapter(SampleRepository.songs)
         binding?.run {
             adapter = SongAdapter(
-                list = SampleRepository.songs
+                list = SampleRepository.songs,
+                onClick = {
+                    findNavController().navigate(R.id.action_musicFragment_to_detailedFragment)
+                }
             )
             rvSong.adapter = adapter
             rvSong.layoutManager = LinearLayoutManager(requireContext())

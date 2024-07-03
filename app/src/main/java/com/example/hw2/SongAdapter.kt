@@ -8,6 +8,7 @@ import com.example.hw2.databinding.ItemMusicBinding
 
 class SongAdapter (
     private var list: List<Song>,
+    private val onClick: (Song) -> Unit,
 ) : RecyclerView.Adapter<SongHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongHolder {
         return SongHolder(
@@ -16,7 +17,7 @@ class SongAdapter (
                 parent,
                 false
             ),
-
+            onClick = onClick,
         )
     }
     override fun getItemCount(): Int = list.size
